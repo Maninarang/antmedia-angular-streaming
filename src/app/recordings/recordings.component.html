@@ -1,0 +1,20 @@
+<meeting-header></meeting-header>
+<!---------------- include header  ------------>
+<main class="mr-main mr-dashboard-main">
+   <div class="row">
+    <div class="col-sm-4" *ngFor="let item of recordings">
+     <video controls style="width:300px">
+         <source src="{{mediaBaseUrl}}{{item.recording}}"/>
+     </video>   
+
+    </div>
+
+</div>
+<div class="table-message" *ngIf="recordings?.length == 0">No record Found!!!</div>
+
+  <meeting-sidebar></meeting-sidebar>  
+<!---------------- include sidebar  ------------>
+
+</main>
+<meeting-footer></meeting-footer>
+<!---------------- include footer  ------------>

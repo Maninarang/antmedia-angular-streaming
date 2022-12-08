@@ -1,0 +1,23 @@
+
+:host::ng-deep ng-multiselect-dropdown .multiselect-dropdown   .dropdown-btn  .selected-item{
+    background: #F16C69 !important;
+    border:1px solid #F16C69 !important;
+}
+
+
+:host::ng-deep .multiselect-item-checkbox input[type=checkbox] + div:before {
+    color: #F16C69 !important;
+    border: 2px solid #F16C69 !important;
+
+}
+
+:host::ng-deep .multiselect-item-checkbox input[type=checkbox]:checked + div:before {
+    background: #F16C69 !important;
+}
+
+.error-message {
+    margin-top: 5px;
+}
+
+
+

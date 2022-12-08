@@ -1,0 +1,19 @@
+<div class="mr-video-chat">
+  <div class="mr-dashboard-chat" [scrollTop]="scrollMe.scrollHeight" #scrollMe>
+     <div class="mr-dashboard-chat-inner" *ngFor="let message of messages">
+       <!-- <h2 class="mr-dashboard-chat-inner-name">Maninder Singh</h2> -->
+       <!-- <p>abc abc abc abc abc abc abc abc abc</p> -->
+       <h6 class="mr-dashboard-chat-inner-name">{{message.userName}}</h6>
+       <p *ngIf="message.type == 1"> {{message.message}}</p>
+       <p *ngIf="message.type > 1"> <a href="{{message.message}}" target="_blank"> <img class="fitImage" src="{{message.thumb}}"></a></p>
+    </div>
+  </div>
+  <div class="mr-dashboard-chat-bottom">
+     <input type="text" [(ngModel)]="message"
+     (keyup)="$event.keyCode == 13 && sendMessage()" class="form-control">
+    <div class="mr-dashboard-chat-bottom-file">
+       <input type="file" (change)="sendAttachment($event)"><i style="font-size:22px" class="fa fa-paperclip" aria-hidden="true"></i>
+    </div>
+    <button type="button" (click)="sendMessage()" class="mr-blue-btn btn"><i class="fa fa-send"></i></button>
+  </div>
+</div>

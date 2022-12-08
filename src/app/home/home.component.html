@@ -1,0 +1,355 @@
+<header>
+    <div class="mr-header" id="myHeader">
+        <div class="container">
+             <div class="row">
+                 <div class="col-md-12 d-flex flex-wrap align-items-center">
+                       <div class="mr-navigation-toggle">
+                         <a href="javascript:;" onclick="mobileopen()"><i class="fa fa-bars"></i></a>
+                     </div>
+                     <div class="mr-new-logo pr-4">
+                         <img src="/assets/images/home/logo.png" alt="logo" class="white-logo">
+                         <img src="/assets/images/home/logo-black.png" alt="logo" class="sticky-logo">
+                         <h1 class="sloganEnc">Live chat, Calls and video calls for websites</h1>
+                     </div>
+                     <div class="mr-new-navigation">
+                         <ul class="m-0 p-0">
+                            <li>
+                                <a href="javascript:void(0)">Home</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0)">Company</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0)">Products</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">App</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0)">Contact Us</a>
+                            </li>
+                            <li>
+                                <a routerLink="/login" class="login">Log in</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0)"class="knowmore">Know more</a>
+                            </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <div class="mr-mobile" id="mobileNav">
+                     <a href="javscript:;" onclick="mobileclose()" class="mr-mobile-close"><i class="fa fa-times"></i></a>
+                     <div class="mr-new-navigation">
+                         <ul class="m-0 p-0">
+                            <li>
+                                <a href="javascript:void(0);">Home</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0);">Company</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0);">Products</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">App</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0);">Contact Us</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="login">Log in</a>
+                            </li>
+                             <li>
+                                <a href="javascript:void(0);"class="knowmore">Know more</a>
+                            </li>
+                         </ul>
+                     </div>
+                 </div>
+                 <!--<div class="col-md-2 d-flex flex-wrap align-items-center justify-content-end">
+                    <a href="javascript:void(0);" class="mr-header-flag"><img src="/assets/images/home/eeuu.jpg"></a>
+                 </div>-->
+             </div>
+        </div>
+    </div>
+ </header>
+ <section class="mr-home-banner">
+    <div class="container">
+       <h1 class="text-center">
+<span
+class="txt-rotate"
+data-period="2000"
+data-rotate='[ "Schedule Calls", "Schedule Live Calls", "Scheduling", "Schedule Live Chats" ]'></span>
+</h1>
+<p class="text-center">"Do not miss business opportunities and approach your customers immediately"</p>
+<div class="mr-home-slider-button">
+<a href="javscript;">Contact an advisor</a>
+</div>
+    </div>
+ </section>
+ <section class="mr-home-video">
+     <div class="container">
+           <div class="bol1s mr-bola-llama-hide">&nbsp;</div>
+         <div class="mr-home-video-inner">
+            <img src="/assets/images/home/home-video.png" alt="video" class="img-fluid">
+            <div class="icon_play"><i class="fa fa-play"></i></div>
+         </div>
+         <h2 class="mr-home-subhead text-center">Communication is the window of business success</h2>
+         <p class="text-center mr-home-text">With our digital channel platform you can integrate voice calls, video calls, scheduling and customer service chat from your website, without installations or complex configurations, creating direct communication with your customers. It is easy and simple!</p>
+     </div>
+ </section>
+ <section class="mr-home-services-top ptb-100">
+   <div class="container"> 
+      <div class="mr-home-services-top-inner d-md-flex flex-wrap align-items-center justify-content-between">
+         <div class="mr-home-services-top-left"> 
+            <img src="/assets/images/home/mr-services-top.png" alt="services" class="img-fluid">
+            <div class="mr-cicul-agend">
+            <div class="icon-agend icon-a1"><i class="fa fa-desktop"></i></div>
+            <div class="icon-agend icon-a2"><i class="fa fa-video-camera"></i></div>
+             <div class="icon-agend icon-a3"><i class="fa fa-calendar"></i></div>
+             <div class="icon-agend icon-a4"><i class="fa fa-envelope"></i></div>
+             <div class="icon-agend icon-a5"><i class="fa fa-language"></i></div>
+             <div class="icon-agend icon-a6"><i class="fa fa-phone"></i></div>
+             <div class="icon-agend icon-a7"><i class="fa fa-bar-chart"></i></div>
+            </div>
+         </div>
+         <div class="mr-home-services-top-right"> 
+               <div id="demo" class="carousel slide" data-ride="carousel">
+                 <!-- The slideshow -->
+                 <div class="carousel-inner">
+                  <ngb-carousel [interval]="3000" [showNavigationArrows]="false" [showNavigationIndicators]="false" >
+
+                  <ng-template ngbSlide>
+                     <h2 class="mr-home-subhead">Video calls</h2>
+                     <p class="mr-home-text">Online support and attention by video call in real time</p>
+                  </ng-template>
+                  <ng-template ngbSlide>
+                     <h2 class="mr-home-subhead">Scheduling</h2>
+                     <p class="mr-home-text">Connect faster by scheduling appointments.</p>
+                  </ng-template>
+                   <ng-template ngbSlide>
+                     <h2 class="mr-home-subhead">Translate</h2>
+                     <p class="mr-home-text">You can collect contact information of visitors with scheduled questions.</p>
+                  </ng-template>
+                   <ng-template ngbSlide>
+                     <h2 class="mr-home-subhead">Multi platform</h2>
+                     <p class="mr-home-text">The options will be displayed on all Android, iOS, Tablet, iPad, PC, MacOs, Linux devices.</p>
+                  </ng-template>
+                  </ngb-carousel>
+
+                 </div>
+               </div>
+               <div class="mr-btns_fills"><a class="btn btn-normal" href="javascript:void(0);">See specifications</a></div>
+         </div>			  
+      </div>
+   </div>
+ </section>
+ <section class="mr-home-services mr-home-services-1 ptb-100">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6">
+             <h2 class="mr-home-subhead">Video calls</h2>
+             <p class="mr-home-text">With <b>Icampus<sup>®</sup></b> you can communicate with your customers through video calling, without the need for installations or complex configurations. Access from your mobile, PC or Mac, without complications.</p>
+             <div class="mr-btns_fills"><a class="btn btn-normal" href="javascript:void(0);">See specifications</a></div>
+           </div>
+           <div class="col-md-6 mr-home-services-right">
+              <img src="/assets/images/home/videollamada.png" alt="calls" class="img-fluid">
+              <div class="bola-llama mr-bola-llama-hide">&nbsp;</div>
+           </div>
+        </div>
+    </div>
+ </section>
+ <section class="mr-home-services mr-home-services-2 ptb-100">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6 mr-home-services-right text-center">
+             <img src="/assets/images/home/caracteristicas.png" alt="chat" class="img-fluid">
+             <div class="bola-bot mr-bola-llama-hide">&nbsp;</div>
+           </div>
+           <div class="col-md-6">
+             <h2 class="mr-home-subhead">Chat and Chatbot without borders</h2>
+             <p class="mr-home-text">Interact with your customers and maintain a borderless communication to respond to their concerns quickly and easily. Discover our new web development, now your consultants can write in Spanish and your potential clients will read the text in English or in any language, what it means is that they will have a communication translated in real time.</p>
+             <div class="mr-btns_fills"><a class="btn btn-normal btn_nsecondar mr-4" href="javascript:void(0);">More bot</a><a class="btn btn-normal" href="javascript:void(0);">More chat</a></div>
+           </div>
+        </div>
+    </div>
+ </section>
+  <section class="mr-home-services mr-home-services-1 ptb-100">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6">
+             <h2 class="mr-home-subhead">Voice calls</h2>
+             <p class="mr-home-text mr-home-services-text-width">With just one click, communicate quickly and effectively with your client, at no additional cost, which gives you all the communication options in a single tool.</p>
+             <div class="mr-btns_fills"><a class="btn btn-normal" href="javascript:void(0);">See specifications</a></div>
+           </div>
+           <div class="col-md-6 mr-home-services-right">
+              <img src="/assets/images/home/voice.png" alt="calls" class="img-fluid">
+              <div class="bola-llama mr-bola-llama-hide">&nbsp;</div>
+           </div>
+        </div>
+    </div>
+ </section>
+ <section class="mr-home-services mr-home-services-4 ptb-100">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6 mr-home-services-right text-center">
+             <img src="/assets/images/home/caracteristicas-4-1-USA.png" alt="chat" class="img-fluid">
+             <div class="bola-video mr-bola-llama-hide">&nbsp;</div>
+           </div>
+           <div class="col-md-6">
+             <h2 class="mr-home-subhead">Video calls</h2>
+             <p class="mr-home-text"> Through this tool connect with your customers combining chat and video at the same time, with excellent resolution and sound. You can also schedule your virtual advice to offer a better experience to your customers. </p>
+             <h2 class="mr-home-subhead">Your customers want to be served without excuses</h2>
+             <p class="mr-home-text"> Our AGENDAMIENTO service has an intuitive Administrative Control Center, in which your consultants can define their availability agendas, check their notifications for following advice. In addition, it allows you to manage the multiple agendas of advisors, so that your client can find countless schedule options. In addition, Ringow® has a super user role management that manages your agents globally. You can check the report panel and variables of all the settings of the operation. </p>
+              <div class="mr-btns_fills"><a class="btn btn-normal" href="javascript:void(0);">See specifications</a></div>
+           </div>
+        </div>
+    </div>
+ </section>
+ <section class="mr-home-services mr-home-services-5 ptb-100">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6">
+             <h2 class="mr-home-subhead">Custom software</h2>
+             <p class="mr-home-text mr-home-services-text-width">With Icampus <sup>®</sup> you can maintain your corporate image with your logo, distinctive colors and typography and so when your customers enter your website they live an experience close to your brand and generate more confidence.</p>
+           </div>
+           <div class="col-md-6 mr-home-services-right">
+              <img src="/assets/images/home/caracteristicas-5-1.png" alt="calls" class="img-fluid">
+              <div class="bola-llama mr-bola-llama-hide">&nbsp;</div>
+           </div>
+        </div>
+    </div>
+ </section>
+ <section class="mr-home-services mr-home-services-4  mr-home-services-6 ptb-100 pb-0">
+    <div class="container">
+        <div class="row"> 
+           <div class="col-md-6 mr-home-services-right text-center">
+             <img src="/assets/images/home/caracteristicas-6-1.png" alt="chat" class="img-fluid">
+             <div class="bola-video mr-bola-llama-hide">&nbsp;</div>
+           </div>
+           <div class="col-md-6 mr-home-services-6-content">
+             <h2 class="mr-home-subhead">Real Time Reports</h2>
+             <p class="mr-home-text"> This chat, like all our products, is measurable and creates reports that will allow you to see the efficiency of the chat in your company. </p>
+             <p class="mr-home-text"> Through this tool you can have an exact detail of the productivity of your company. </p>
+           </div>
+        </div>
+    </div>
+ </section>
+ <section class="mr-brief ptb-100">
+     <div class="container">
+           <div class="bola-carac mr-bola-llama-hide">&nbsp;</div>
+        <h2 class="mr-home-subhead text-center">A brief look at <b>Icampus <sup>®</sup></b></h2>
+        <div class="row">
+          <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-envelope"></i>
+                   </div>
+                   <p>Chat</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>Chat with your customers easy and simple from your PC, iOS or Android phone</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+         <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-video-camera" aria-hidden="true"></i>
+                   </div>
+                   <p>Video Calls</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>Online support and attention by video call in real time</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-calendar" aria-hidden="true"></i>
+                   </div>
+                   <p>Scheduling</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>Connect faster by scheduling appointments.</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+        <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-desktop" aria-hidden="true"></i>
+                   </div>
+                   <p>Multi platform</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>The options will be displayed on all Android, iOS, Tablet, iPad, PC, MacOs, Linux devices.</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+         <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                   </div>
+                   <p>Statistics</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>Analyze the evolution of the chat through statistics generated by the software.</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+         <div class="col-md-3 mr-belief-inner">
+              <div class="mr-bloqs mr-bloqs_left">
+                 <div class="mr-bloqs-blogs">
+                   <div class="mr-bloqs-icon">
+                   <div class="mr-blogs-icon-inner">
+                       <i class="fa fa-language" aria-hidden="true"></i>
+                   </div>
+                   <p>Translate</p>
+                   </div>
+                     <div class="mr-bloqs-atias">
+                     <div class="mr-bloqs-atias-inner">
+                   <p>The chat recognizes the language and performs the automatic translation, no matter the country.</p>
+                 </div>
+                 </div>
+              </div>
+          </div>
+        </div>
+     </div>
+     </div>
+ </section>
+ <section class="ptb-100 mr-subscribe">
+    <div class="container">
+      <h2 class="mr-home-subhead text-center">Subscribe to our Newsletters</h2>
+      <div class="mr-subscribe-input">
+         <input type="text" class="form-control" placeholder="Email">
+         <button type="button" class="btn">Send</button>
+      </div>
+    </div>
+ </section>

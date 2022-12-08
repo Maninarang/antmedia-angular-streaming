@@ -1,0 +1,31 @@
+.accept {
+    width: 20%; 
+    height: 46px;
+    line-height: 46px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+     background: #2C2E42;
+}
+
+.reject {
+    width: 20%; 
+    height: 46px;
+    line-height: 46px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    margin-right: 10px;
+    background: red;
+}

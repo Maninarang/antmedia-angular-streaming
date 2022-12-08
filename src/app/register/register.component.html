@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<div class="mr-login-form">
+    <div class="mr-login-form-inner">
+      <div class="titleencloginmaker titleencloginmaker_one">Signup</div>
+      <form [formGroup]="registerForm" (ngSubmit)="submit()">
+             <div class="form-group mr-login-field">
+                 <i class="fa fa-user"></i>
+                 <input type="text" formControlName="name"
+                [ngClass]="{errmsg: (submitted && f.name.errors)}" class="form-control" placeholder="Enter Name">
+              </div>
+              <ng-container *ngIf="submitted && f.name.errors">
+                <p class="error-message" *ngIf="f.name.errors.required">
+                   Name is required!
+                </p>
+                <p class="error-message" *ngIf="f.name.errors.minlength">
+                   Name must be of minimum 4 characters!
+                </p>
+              </ng-container>
+              <div class="form-group mr-login-field">
+                 <i class="fa fa-envelope"></i>
+                 <input type="text" [ngClass]="{errmsg: (submitted && f.email.errors)}"
+                  formControlName="email" class="form-control" placeholder="Enter Email">
+              </div>
+              <ng-container *ngIf="submitted && f.email.errors">
+                <p class="error-message" *ngIf="f.email.errors.required">
+                  Email is required!
+                </p>
+                <p class="error-message" *ngIf="f.email.errors.email">
+                  Email must be valid!
+                </p>
+              </ng-container>
+              <div class="form-group mr-login-field">
+                 <i class="fa fa-key"></i>
+                 <input [ngClass]="{errmsg: (submitted && f.password.errors)}" 
+                 formControlName="password" type="Password" class="form-control" placeholder="Enter Password">
+              </div>
+              <ng-container *ngIf="submitted && f.password.errors">
+                <p class="error-message" *ngIf="f.password.errors.required">
+                  Password is required!
+                </p>
+                <p class="error-message" *ngIf="f.password.errors.minlength">
+                  Password must be of minimum 4 characters!
+                </p>
+              </ng-container>
+              <div class="form-group mr-btns_fills mt-0 justify-content-center d-flex mb-3">
+                <button type="submit" class="btn btn-normal" [disabled]="spinner">
+                    <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true" *ngIf="spinner"></span>
+                    <span *ngIf="!spinner">Submit</span></button>  
+                            </div>
+              <div class="form-group signup-text mb-0">
+                  Have an account already! <a routerLink="/login">Log In</a>
+              </div>
+     </form>
+    </div>
+  </div>

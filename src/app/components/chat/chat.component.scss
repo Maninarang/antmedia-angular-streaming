@@ -1,0 +1,58 @@
+:host {
+    width: 40%;
+}
+.container {
+border: 2px solid #dedede;
+background-color: #e5e5e5;
+border-radius: 5px;
+padding: 10px;
+margin: 10px 0;
+}
+.userName {
+    color: #A60F1E
+}
+.fitImage {
+    height: 100px;
+    width: 200px;
+}
+
+.mr-video-chat {
+    background: #EEE5DC;
+}
+.mr-dashboard-chat-inner {
+    background: #fff;
+    padding: 4px;
+	margin-left: 15px;
+    width: calc(100% - 15px);
+	border-radius: 0px 4px 4px 4px;
+    position: relative;
+    padding-left: 10px;
+    word-break: break-word;
+    white-space: normal;
+}
+.mr-dashboard-chat-bottom .mr-blue-btn {
+    background: #0B3265;
+    border: none;
+}
+.mr-dashboard-chat-inner:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -15px;
+	width: 0;
+	height: 0;
+	border-top: 15px solid #fff;
+	border-left: 15px solid transparent;
+}
+.mr-dashboard-chat-inner .mr-dashboard-chat-inner-name {
+    font-size: 14px;
+	color: #EF7171;
+}
+.mr-dashboard-chat {
+    height: calc(100vh - 58px);
+    overflow-y: auto;
+}
+.mr-dashboard-chat-inner p {
+    font-size: 12px;
+    color: #000;
+}

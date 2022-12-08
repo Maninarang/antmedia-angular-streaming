@@ -1,0 +1,101 @@
+<header>
+    <div class="mr-header">
+       <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-7 d-flex flex-wrap align-items-center">
+                 <div class="mr-mobile-toggle">
+                     <a href="javascript:;" onclick="mobileopen()"><i class="fa fa-bars"></i></a>
+                 </div>
+                 <div class="mr-logo">
+                    <a routerLink="/">Meeting Room</a>
+                 </div>
+                 <div class="mr-mobile-navigation" id="mobileNav">
+                    <a href="#" class="mr-mobile-navigation-close" onclick="mobileclose()"><i class="fa fa-times"></i></a>
+                     <div class="mr-navigation">
+                         <ul class="m-0 p-0">
+                           <!-- <li>
+                              <a routerLink="/">Solutions</a>
+                           </li>
+                           <li>
+                              <a routerLink="/">Plan & Pricing</a>
+                           </li>
+                           <li>
+                              <a routerLink="/">Contact Sales</a>
+                           </li>-->
+                           <li> 
+                          <a routerlink="/meeting-list">Join a meeting</a>
+                           </li>
+                           <li>
+                              <a routerLink="/">Host a meeting</a>
+                           </li>
+                           <li>
+                              <a routerLink="/login">Sign in</a>
+                           </li>
+                           <li>
+                              <a routerLink="/register">Sign up</a>
+                           </li>
+                         </ul>
+                      </div>    
+                 </div>
+                 <div class="mr-navigation">
+                     <!-- <ul class="m-0 p-0">
+                       <li>
+                          <a routerLink="/">Solutions</a>
+                       </li>
+                       <li>
+                          <a routerLink="/">Plan & Pricing</a>
+                       </li>
+                       <li>
+                          <a routerLink="/">Contact Sales</a>
+                       </li>
+                     </ul> -->
+                 </div>
+              </div>
+              <div class="col-md-5 d-flex flex-wrap align-items-center justify-content-end p-0">
+                 <div class="mr-navigation">
+                     <ul class="m-0 p-0">
+                       <li>
+                          <a routerLink="/meeting-list">Join a meeting</a>
+                       </li>
+                       <li>
+                          <a routerLink="/host-meeting">Host a meeting</a>
+                       </li>
+                       <!-- <li>
+                              <a routerLink="/login">Sign in</a>
+                       </li>
+                       <li>
+                          <a routerLink="/register" class="active">Sign up</a>
+                       </li> -->
+                     </ul>
+                 </div>
+              </div>
+          </div>
+       </div>
+    </div>
+
+    <custom-modal id="call-modal" >
+      <section class="ls-get-started">
+          <div class="container">
+            <div class="ls-get-started-inner-call">
+            <div class="ls-get-started-body">
+               <h4 class="ls-get-started-note">{{callerMessage}}</h4>
+             <div class="ls-accepted-streaming">
+               <img src="/assets/images/call-image.jpg" alt="video" class="img-responsive ls-stream-video">
+               <!-- <audio controls loop class="d-none" #audio *ngIf="calling">
+                <source src="/assets/audio/call.mp3"  type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio> -->
+             </div>
+             <div class="ls-accepted-button">
+               <button type="button" (click)="accept()" class="accept-meeting orange-ls-btn btn">Accept</button>
+               <button type="button" (click)="reject()" class="orange-ls-btn btn ls-rejected">Reject</button>
+             </div>
+            </div>
+          
+          </div>
+         
+        </div>
+       
+      </section>
+  </custom-modal>
+</header>

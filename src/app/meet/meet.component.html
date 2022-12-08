@@ -1,0 +1,70 @@
+<div class="mr-video-main-new mr-video-main-new-multiple" [ngClass]="{'smallVideo': showChat}">
+   <div class="row mr-video-inner mr-video-inner2" #multipleVideo>
+      <div [ngClass]="remoteVideo ? videoPlayerClass : ''" class="setheight">
+         <span class="set-username" *ngIf="remoteVideosCount > 1">You</span>
+         <video #video id="localVideo" [ngClass]="{'videosize': remoteVideo}" autoplay muted></video>
+      </div>
+
+   </div>
+   <div class="invite-form p-3" *ngIf="invitationForm" [ngClass]="{'invitation-toggle': showChat}">
+      <form [formGroup]="inviteForm" (ngSubmit)="submit();">
+         <div class="row">
+            <div class="col-md-12 form-group">
+               <label>Add Participant</label>
+               <input [ngClass]="{errmsg: (submitted && f.email.errors)}" formControlName="email" type="text"
+                  placeholder="Email" class="form-control">
+
+            </div>
+            <ng-container *ngIf="submitted && f.email.errors">
+               <p class="error-message" *ngIf="f.email.errors.required">
+                  Email is required!
+               </p>
+               <p class="error-message" *ngIf="f.email.errors.email">
+                  Email must be valid!
+               </p>
+            </ng-container>
+         </div>
+         <div class="row">
+            <div class="col-md-3 meeting-save-button">
+               <button type="submit" class="mr-blue-btn btn" [disabled]="spinner">
+                  <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true"
+                     *ngIf="spinner"></span>
+                  <span *ngIf="!spinner">Add</span></button>
+            </div>
+         </div>
+      </form>
+   </div>
+   <div class="mr-video-icons">
+      <ul class="m-0 p-0">
+         <li (click)="handleAudio()">
+            <a><img src="{{ isMicMuted ? '/assets/images/mute.png' : '/assets/images/unmute.png'}}" alt="audio"></a>
+         </li>
+         <li (click)="handleCamera()">
+            <a><img src="{{ isCameraOff ? '/assets/images/camera-off.png' : '/assets/images/camera-on.png'}}"
+                  alt="camera"></a>
+         </li>
+         <li (click)="toggleChat()">
+            <a><img src="/assets/images/chat.png" alt="chat">
+               <span *ngIf="msgCount" class="badge">{{msgCount}}</span>
+            </a>
+         </li>
+         <li (click)="shareScreen()" *ngIf="isScreenSharingOff">
+            <a><img
+                  src="{{ isScreenSharingOff ? '/assets/images/share-screen.png' : '/assets/images/share-screen.png'}}"
+                  alt="screen"></a>
+         </li>
+         <li (click)="invitationForm = !invitationForm">
+            <a><img src="/assets/images/invite-user.png" alt="invite"></a>
+         </li>
+         <li (click)="leaveRoom();">
+            <a style="background:#C01E2F"><img src="/assets/images/endcall.png" alt="chat"></a>
+         </li>
+         <!-- <li>
+             <a href="#"><img src="/assets/images/share-screennew.png" alt="mute"></a>
+          </li> -->
+      </ul>
+   </div>
+
+   <app-chat (newMessage)="messageCount();" [hidden]="!showChat"></app-chat>
+
+</div>

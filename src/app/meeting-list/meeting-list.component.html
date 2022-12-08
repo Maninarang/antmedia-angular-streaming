@@ -1,0 +1,77 @@
+<meeting-header></meeting-header>
+<!---------------- include header  ------------>
+<main class="mr-main mr-dashboard-main">
+   
+  <meeting-sidebar></meeting-sidebar>  
+<!---------------- include sidebar  ------------>
+<div class="mr-dashboard-wrapper">
+    <h2 class="mr-dashboard-head">Meeting List</h2>
+    <ngb-tabset [destroyOnHide]="false">
+      <ngb-tab title="Scheduled"> 
+         <ng-template ngbTabContent>
+            <div class="table-responsive mr-dashboard-table">
+               <table class="table">
+                  <thead>
+                     <tr>
+                         <th>Topic</th>
+                         <th>Date</th>
+                         <th>Time</th>
+                         <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let item of meetingList">
+                        <td>{{item.meeting.topic}}</td>
+                        <td>{{item.meeting.dateTime *1000 | date: 'yyyy-MM-dd'}}</td>
+                        <td>{{item.meeting.dateTime * 1000 | date: 'hh:mm a '}}</td>
+                        <td>
+                            <button (click)="startMeeting(item.meetingId,item.meeting.dateTime)" *ngIf="userId == item.meeting.userId">Start</button> 
+                            <button (click)="joinMeeting(item.meetingId,item.meeting.dateTime)" *ngIf="userId != item.meeting.userId">Join</button> 
+                        </td>
+                     </tr>
+
+                  </tbody>
+               </table>
+               <div class="table-message" *ngIf="meetingList?.length == 0">No record Found</div>
+
+           </div>  
+         </ng-template>
+       </ngb-tab>
+      <ngb-tab title="Hosted">
+        <ng-template ngbTabContent>
+            <div class="table-responsive mr-dashboard-table">
+               <table class="table">
+                  <thead>
+                     <tr>
+                         <th>Topic</th>
+                         <th>Status</th>
+                         <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let item of hostedMeetingList">
+                        <td>{{item.hostMeeting.topic}}</td>
+                        <td>Ongoing</td>
+                        <td>
+                            <button routerLink="/meet/{{item.meetingId}}/{{item.hostMeeting.userId}}/1" *ngIf="userId == item.hostMeeting.userId">Start</button> 
+                            <button routerLink="/meet/{{item.meetingId}}/{{item.hostMeeting.userId}}/1" *ngIf="userId != item.hostMeeting.userId">Join</button> 
+                        </td>
+                     </tr>
+
+               
+                  </tbody>
+               </table>
+               <div class="table-message" *ngIf="hostedMeetingList?.length == 0">No record Found</div>
+
+           </div>  
+        </ng-template>
+      </ngb-tab>
+   
+     </ngb-tabset>
+
+  </div>
+</main>
+
+
+<meeting-footer></meeting-footer>
+<!---------------- include footer  ------------>

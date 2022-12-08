@@ -1,0 +1,127 @@
+.mr-video-inner-second {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mr-video-inner-second .mr-video-inner-second-half {
+    width: 50%;
+    height: 92vh;
+}
+.mr-video-image.mr-video-image-half {
+    height: 50%;
+}
+.two-divide {
+    width: 50%;
+    height: 100%;
+}
+.mr-video-inner-second-half {
+    width: 50%;
+}
+.videosize {
+    width: 100%;
+}
+
+.mr-video-inner-second {
+    display: flex;
+    flex-wrap: wrap;
+}
+.mr-video-inner-second .mr-video-inner-second-half {
+    width: 50%;
+    height: 92vh;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mr-video-inner-third-half {
+	width: 33.33%;
+    height: 92vh;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mr-video-inner-fourth-half {
+	width: 25%;
+    height: 92vh;
+	display: flex;
+	flex-wrap: wrap;
+}
+.mr-video-image-half {
+    height: 50%;
+}
+.mr-video-image.mr-video-image-third {
+    height: 50%;
+	width: 50%;
+}
+.mr-video-image-half-height-fourth {
+	height: 25%;
+}
+.uppervideo {
+    position: absolute;
+}
+
+.setheight {
+    height: calc(100vh - 56.5px);
+}
+.mr-video-main-new {
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(0,0,0,0.8)
+}
+.mr-video-main-new .mr-video-inner.mr-video-inner2 {
+    margin: 0;
+}
+.video4{
+    height: 50vh;
+    object-fit: cover;
+}
+.col-sm-6 {
+    padding: 0
+}
+.video-group-four{
+    height: 50vh;
+    padding: 0
+}
+.mr-video-icons li {
+    cursor: pointer;
+}
+.mr-video-inner2 video#localVideo {
+    width: 100%;
+    object-fit: cover;
+}
+.mr-video-inner2 .setheight {
+    width: 100%;
+}
+.smallVideo {
+    padding-right: 280px;
+}
+.invite-form {
+    position: absolute;
+    left: 52%;
+    bottom: 28px;
+    background: #fff;
+    margin-bottom: 40px;
+    width: 310px;
+}
+.invite-form:after {
+    content: "";
+    position: absolute;
+    bottom: -16px;
+    width: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 16px solid #fff;
+    left: 13px;
+}
+.invite-form.invitation-toggle {
+    left: 41%;
+}
+.invite-form label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.error-message {
+    margin-left: 20px
+}
+.badge{
+    font-size: 100%;
+    margin-bottom: 40px;
+    background: #C01E2F;
+}

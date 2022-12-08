@@ -1,0 +1,133 @@
+<meeting-header></meeting-header>
+<!---------------- include header  ------------>
+<main class="mr-main mr-dashboard-main">
+   
+  <meeting-sidebar></meeting-sidebar>  
+<!---------------- include sidebar  ------------>
+
+    <div class="mr-dashboard-wrapper">
+      <h2 class="mr-dashboard-head">Schedule a meeting</h2>
+      <div class="mr-signin-form">
+         <form [formGroup]="meetingForm" (ngSubmit)="submit();">
+             <div class="row">
+                <div class="col-md-6 form-group">
+                  <label>Topic</label>
+                  <input [ngClass]="{errmsg: (submitted && f.topic.errors)}"
+                   formControlName="topic" type="text" placeholder="Topic" class="form-control">
+                  <ng-container *ngIf="submitted && f.topic.errors">
+                     <p class="error-message" *ngIf="f.topic.errors.required">
+                       Topic is required!
+                     </p>
+                     <p class="error-message" *ngIf="f.topic.errors.minlength">
+                        Topic must be of minimum 4 characters!
+                      </p>
+                   </ng-container>
+                </div>
+              
+                <div class="col-md-6 form-group">
+                  <label>Description (Optional)</label>
+                  <textarea formControlName="description" placeholder="Description" class="form-control"></textarea>
+                 </div>
+                 
+             </div>
+             <div class="row">
+                <div class="col-md-6 form-group">
+                  
+                  <div class="row">
+
+                     <div class="col-md-6 col-6">
+                       <label>When</label>
+                        <input [min]="min" class="form-control" [ngClass]="{errmsg: (submitted && f.date.errors)}" formControlName="date"
+                         [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date">
+                        <owl-date-time  [pickerType]="'calendar'" #dt1></owl-date-time>    
+                        <ng-container *ngIf="submitted && f.date.errors">
+                           <p class="error-message" *ngIf="f.date.errors.required">
+                             Date is required!
+                           </p>
+                         </ng-container>
+                     </div>
+                  
+                                      
+                     <div class="col-md-6 col-6">
+                       <label>Time</label>
+                        <input formControlName="time" class="form-control" [ngClass]="{errmsg: (submitted && f.time.errors)}"
+                         [owlDateTimeTrigger]="dt2"  [owlDateTime]="dt2" placeholder="Time">
+                        <owl-date-time [hour12Timer]="true" [pickerType]="'timer'" #dt2></owl-date-time>
+                        <ng-container *ngIf="submitted && f.time.errors">
+                           <p class="error-message" *ngIf="f.time.errors.required">
+                             Time is required!
+                           </p>
+                         </ng-container>
+                     </div>
+    
+                  </div>
+                </div>
+                <div class="col-md-6 form-group mr-time-duration">
+                  <label>Duration</label>
+                   <div class="row">
+                     <div class="col-md-6 col-6 d-flex align-items-center flex-wrap">
+                        <select [ngClass]="{errmsg: (submitted && f.hourDuration.errors)}" class="form-control" formControlName="hourDuration">
+                           <option  value="">Select</option>
+                           <option *ngFor="let item of hours" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span>hr</span>
+                        <ng-container *ngIf="submitted && f.hourDuration.errors">
+                          <p class="error-message" *ngIf="f.hourDuration.errors.required">
+                            Duration Hour is required!
+                          </p>
+                        </ng-container>
+                     </div>
+                 
+                      <div class="col-md-6 col-6 d-flex align-items-center flex-wrap">
+                        <select [ngClass]="{errmsg: (submitted && f.minuteDuration.errors)}" class="form-control" formControlName="minuteDuration">
+                           <option  value="">Select</option>
+                           <option *ngFor="let item of minutes" value="{{item}}">{{item}}</option>
+                        </select>
+                        <span>min</span>
+
+                        <ng-container *ngIf="submitted && f.minuteDuration.errors">
+                           <p class="error-message" *ngIf="f.minuteDuration.errors.required">
+                             Duration Time is required!
+                           </p>
+                         </ng-container>
+                     </div>
+                  </div>
+                 </div>
+             </div>
+             <div class="row">
+                <div class="col-md-6">
+                        <label>Participants</label>
+                        <a  class="add-more" (click)="addEmail()"><i class="fa fa-plus"></i></a>
+                         <div formArrayName="emails">
+                        <div class="mr-participants"  *ngFor="let item of meetingForm.get('emails').controls; let i = index;" [formGroupName]="i">
+                            <input type="email" formControlName="email"
+                            class="form-control" >
+                            <a (click)="removeEmail(i)"><i class="fa fa-minus"></i></a>
+                            <ng-container *ngIf="submitted && item.errors" >
+                              <p class="error-message">
+                               Email is required!
+                              </p>         
+                              <p class="error-message" *ngIf="f.email.errors.pattern">
+                               Email must be valid!
+                              </p>          
+                            </ng-container>
+                        </div>
+                       </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-md-12 text-center meeting-save-button">
+                  <button type="submit" class="mr-blue-btn btn" [disabled]="spinner">
+                     <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true" *ngIf="spinner"></span>
+                     <span *ngIf="!spinner">Save</span></button> 
+                   <!-- <button type="button" class="mr-black-btn btn">Cancel</button>           -->
+                </div>
+             </div>
+         </form>
+      </div>
+    </div>
+  </main>
+
+
+  <meeting-footer></meeting-footer>
+  <!---------------- include footer  ------------>

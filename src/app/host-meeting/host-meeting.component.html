@@ -1,0 +1,56 @@
+<meeting-header></meeting-header>
+<!---------------- include header  ------------>
+<main class="mr-main mr-dashboard-main">
+
+    <meeting-sidebar></meeting-sidebar>
+    <!---------------- include sidebar  ------------>
+
+    <div class="mr-dashboard-wrapper">
+        <h2 class="mr-dashboard-head">Host a meeting</h2>
+        <div class="mr-signin-form">
+            <form [formGroup]="meetingForm" (ngSubmit)="submit();">
+                <div class="row">
+                    <div class="col-md-6 form-group">
+                        <label>Topic</label>
+                        <input 
+                         formControlName="topic" type="text" placeholder="Topic" class="form-control">
+                        <ng-container *ngIf="submitted && f.topic.errors">
+                           <p class="error-message" *ngIf="f.topic.errors.required">
+                             Topic is required!
+                           </p>
+                           <p class="error-message" *ngIf="f.topic.errors.minlength">
+                              Topic must be of minimum 4 characters!
+                            </p>
+                         </ng-container>
+                      </div>
+                    <div class="col-md-6 form-group">
+                        <label>Select User</label>
+                        <ng-multiselect-dropdown 
+                        formControlName="user" [placeholder]="'Select Users'" [data]="users"
+                         [settings]="dropdownSettings">
+                        </ng-multiselect-dropdown>
+                        <ng-container *ngIf="submitted && f.user.errors">
+                            <p class="error-message" *ngIf="f.user.errors.required">
+                              User is required!
+                            </p>
+                          </ng-container>
+                    </div>
+                </div>
+                <label>Beta Version</label>
+                <input type="checkbox" formControlName="beta">
+       
+                <div class="row">
+                    <div class="col-md-12 meeting-save-button">
+                      <button type="submit" class="mr-blue-btn btn" [disabled]="spinner">
+                         <span class="spinner-border spinner-border-lg" role="status" aria-hidden="true" *ngIf="spinner"></span>
+                         <span *ngIf="!spinner">Start</span></button> 
+                    </div>
+                 </div>
+            </form>
+
+        </div>
+    </div>
+
+</main>
+<meeting-footer></meeting-footer>
+<!---------------- include footer  ------------>
